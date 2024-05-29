@@ -1,11 +1,15 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-SECRET_KEY = 'django-insecure-es$&j^z%=2n7&g6+1mmhsxof!xe8jcyu7j**t4j$1nya!*5k%y'
 
-DEBUG = True
+DEBUG = os.getenv('DEBAG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -59,16 +63,28 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'gIcNuHNVhMSWDRVxJRyQGPJICLjuKjow',
+#         'HOST': 'viaduct.proxy.rlwy.net',
+#         'PORT': '51702',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
+        'NAME': os.getenv('NAME'),
         'USER': 'postgres',
-        'PASSWORD': 'RuaSOnuUOIAlvweeWqqYWoqmVRPrLFpF',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '40630',
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv("PORT"),
     }
 }
+
 
 
 # Password validation
