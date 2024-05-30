@@ -8,4 +8,6 @@
 <h2>Step 2</h2>
 <h3>python3 manage.py makemigrations</h3>
 <h3>pyton3 manage.py migrate</h3>
+<h3>python3 manage.py collectstatic</h3>
 <h3>pyton3 manage.py runserver</h3>
+
