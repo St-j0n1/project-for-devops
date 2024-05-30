@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-DEBUG = os.getenv('DEBAG')
+DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -24,6 +24,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_spectacular',
+    'staticfiles',
 
     'product'
 ]
@@ -144,4 +145,4 @@ SPECTACULAR_SETTINGS = {
     # OTHER SETTINGS
 }
 
-
+ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
